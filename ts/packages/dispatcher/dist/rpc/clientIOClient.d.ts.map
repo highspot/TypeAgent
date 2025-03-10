@@ -1,0 +1,1 @@
+{"version":3,"file":"clientIOClient.d.ts","sourceRoot":"","sources":["../../src/rpc/clientIOClient.ts"],"names":[],"mappings":"AAIA,OAAO,EACH,QAAQ,EAGX,MAAM,6BAA6B,CAAC;AAMrC,OAAO,EAAE,UAAU,EAAE,MAAM,mBAAmB,CAAC;AAG/C,wBAAgB,uBAAuB,CAAC,OAAO,EAAE,UAAU,GAAG,QAAQ,CAiFrE"}

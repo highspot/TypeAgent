@@ -1,0 +1,57 @@
+{
+  "emojiChar": "🌐",
+  "defaultEnabled": false,
+  "description": "Agent that allows you control an existing browser window",
+  "schema": {
+    "description": "Browser agent that allows you control an existing browser window and perform actions such as opening a new tab, closing a tab, scrolling, zooming and navigating to a specific URL.",
+    "schemaFile": "./actionsSchema.mts",
+    "schemaType": "BrowserActions"
+  },
+  "subActionManifests": {
+    "paleoBioDb": {
+      "defaultEnabled": false,
+      "transient": true,
+      "schema": {
+        "description": "This enables users to explore paleological data. Users can filter fossil data by location, by geological time and by taxon.",
+        "schemaFile": "./paleoBioDb/schema.mts",
+        "schemaType": "PaleoBioDbActions"
+      }
+    },
+    "crossword": {
+      "defaultEnabled": false,
+      "transient": true,
+      "schema": {
+        "description": "This allows users to interact with a crossword puzzle.",
+        "schemaFile": "./crossword/schema/userActions.mts",
+        "schemaType": "CrosswordActions"
+      }
+    },
+    "commerce": {
+      "defaultEnabled": false,
+      "transient": true,
+      "schema": {
+        "description": "This allows users to interact with e-commerce websites to find, compare and purchase various products.",
+        "schemaFile": "./commerce/schema/userActions.mts",
+        "schemaType": "ShoppingActions"
+      }
+    },
+    "instacart": {
+      "defaultEnabled": false,
+      "transient": true,
+      "schema": {
+        "description": "This allows users to interact with Instacart to find, compare and purchase various products.",
+        "schemaFile": "./instacart/schema/userActions.mts",
+        "schemaType": "InstacartActions"
+      }
+    },
+    "schemaFinder": {
+      "defaultEnabled": false,
+      "transient": true,
+      "schema": {
+        "description": "This helps users to inspect a page and find the possible actions they can take on it.",
+        "schemaFile": "./discovery/schema/discoveryActions.mts",
+        "schemaType": "SchemaDiscoveryActions"
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"debugLoggerSink.d.ts","sourceRoot":"","sources":["../../src/logger/debugLoggerSink.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,UAAU,EAAE,QAAQ,EAAE,MAAM,aAAa,CAAC;AAGnD,cAAM,eAAgB,YAAW,UAAU;IAChC,QAAQ,CAAC,KAAK,EAAE,QAAQ;CAIlC;AAED,wBAAgB,qBAAqB,oBAEpC"}

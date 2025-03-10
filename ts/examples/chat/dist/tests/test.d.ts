@@ -1,0 +1,20 @@
+export declare function func1(x: number, y: number, op: string): number;
+export declare function testEmbedding(): Promise<void>;
+export declare function testEmbedding2(): Promise<void>;
+export declare function testEmbeddingModel(): Promise<void>;
+export declare function testEmbeddingBasic(): Promise<void>;
+export declare function testSemanticMap(): Promise<void>;
+export declare function generateMessageLines(count: number): string[];
+export declare function summarize(): Promise<void>;
+export declare function testBingSummary(): Promise<void>;
+export declare function testBingImageSearch(): Promise<void>;
+export declare function testCircularArray(): void;
+export declare function runTestCases(): Promise<void>;
+export declare function testDotPerf(): void;
+export declare function testDotPerf2(size: number): void;
+export type DataType = string | number;
+export declare function testTypes<TKey extends DataType, TValue extends DataType>(): void;
+export declare function testPerf(): Promise<void>;
+export declare function loadTestEmbeddings(): Promise<void>;
+export declare function runTests(): Promise<void>;
+//# sourceMappingURL=test.d.ts.map

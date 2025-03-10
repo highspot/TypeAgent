@@ -1,0 +1,1 @@
+{"version":3,"file":"echoActionSchema.d.ts","sourceRoot":"","sources":["../src/echoActionSchema.ts"],"names":[],"mappings":"AAGA,MAAM,MAAM,UAAU,GAAG,aAAa,CAAC;AAIvC,MAAM,MAAM,aAAa,GAAG;IACxB,UAAU,EAAE,SAAS,CAAC;IACtB,UAAU,EAAE;QACR,IAAI,CAAC,EAAE,MAAM,CAAC;QAEd,WAAW,CAAC,EAAE,MAAM,CAAC;KACxB,CAAC;CACL,CAAC"}

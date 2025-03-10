@@ -1,0 +1,1 @@
+{"version":3,"file":"dispatcherActionSchema.d.ts","sourceRoot":"","sources":["../../../../src/context/dispatcher/schema/dispatcherActionSchema.ts"],"names":[],"mappings":"AAGA,MAAM,MAAM,iBAAiB,GAAG,aAAa,CAAC;AAG9C,MAAM,WAAW,aAAa;IAC1B,UAAU,EAAE,SAAS,CAAC;IACtB,UAAU,EAAE;QAER,OAAO,EAAE,MAAM,CAAC;KACnB,CAAC;CACL"}

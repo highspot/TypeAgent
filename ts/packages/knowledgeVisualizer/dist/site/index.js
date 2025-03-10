@@ -1,0 +1,66 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+import { CollapsableContainer } from "./collapsableContainer";
+import { HierarchicalEdgeBundling } from "./visualizations/hierarchicalEdgeBundling";
+import { TangledTree } from "./visualizations/tangledTree";
+import { defaultTidyTreeConfig, TidyTree, } from "./visualizations/tidyTree";
+import { WordCloud } from "./visualizations/wordCloud";
+const eventSource = new EventSource("/events");
+function addEvents(listsContainer, tangledTreeContainer, hierarchyContainer, wordCloud, tidyTree, tangledTree, hierarchy, words) {
+    eventSource.addEventListener("updateListVisualization", (event) => {
+        const data = JSON.parse(event.data);
+        listsContainer.chartContainer.innerHTML = "";
+        tidyTree.update(data);
+        listsContainer.chartContainer.append(tidyTree.tree);
+    });
+    eventSource.addEventListener("updateKnowledgeVisualization", (event) => {
+        const data = JSON.parse(event.data);
+        tangledTreeContainer.chartContainer.innerHTML = "";
+        tangledTree.update(data);
+        tangledTreeContainer.chartContainer.append(tangledTree.tree);
+    });
+    eventSource.addEventListener("updateKnowledgeHierarchyVisualization", (event) => {
+        const data = JSON.parse(event.data);
+        hierarchyContainer.chartContainer.innerHTML = "";
+        hierarchy.update(data);
+        hierarchyContainer.chartContainer.append(hierarchy.chart);
+    });
+    eventSource.addEventListener("updateWordCloud", (event) => {
+        const data = JSON.parse(event.data);
+        wordCloud.chartContainer.innerHTML = "";
+        words.update(data);
+        wordCloud.chartContainer.append(words.chart);
+    });
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const mainContainer = document.getElementById("mainContainer");
+    const listsContainer = new CollapsableContainer("Lists");
+    const tangledTreeContainer = new CollapsableContainer("Tangled Tree");
+    const hierarchyContainer = new CollapsableContainer("Knowledge Network");
+    const wordCloudContainer = new CollapsableContainer("Word Cloud");
+    const treeConfig = defaultTidyTreeConfig;
+    treeConfig.label = (d) => (d.name ? d.name : d);
+    treeConfig.title = (_, n) => {
+        return `${n
+            .ancestors()
+            .reverse()
+            .map((d) => d.data.name)
+            .join(".")}`;
+    };
+    treeConfig.children = (d) => d.items;
+    const tidyTree = new TidyTree({ name: "empty list", items: [] }, treeConfig);
+    const tangledTree = new TangledTree([]);
+    const hierarchy = new HierarchicalEdgeBundling([]);
+    const wordCloud = new WordCloud("");
+    mainContainer.appendChild(listsContainer.div);
+    mainContainer.appendChild(tangledTreeContainer.div);
+    mainContainer.appendChild(hierarchyContainer.div);
+    mainContainer.appendChild(wordCloudContainer.div);
+    listsContainer.chartContainer.append(tidyTree.tree);
+    tangledTreeContainer.chartContainer.append(tangledTree.tree);
+    hierarchyContainer.chartContainer.append(hierarchy.chart);
+    wordCloudContainer.chartContainer.append(wordCloud.chart);
+    addEvents(listsContainer, tangledTreeContainer, hierarchyContainer, wordCloudContainer, tidyTree, tangledTree, hierarchy, wordCloud);
+    fetch("/initializeData");
+});
+//# sourceMappingURL=index.js.map

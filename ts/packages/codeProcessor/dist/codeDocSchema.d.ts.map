@@ -1,0 +1,1 @@
+{"version":3,"file":"codeDocSchema.d.ts","sourceRoot":"","sources":["../src/codeDocSchema.ts"],"names":[],"mappings":"AAIA,MAAM,MAAM,OAAO,GAAG;IAClB,UAAU,EAAE,MAAM,CAAC;IACnB,OAAO,EAAE,MAAM,CAAC;CACnB,CAAC;AAEF,MAAM,MAAM,iBAAiB,GAAG;IAC5B,QAAQ,CAAC,EAAE,OAAO,EAAE,CAAC;CACxB,CAAC"}

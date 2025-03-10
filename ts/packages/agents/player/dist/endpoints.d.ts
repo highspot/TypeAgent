@@ -1,0 +1,36 @@
+/// <reference types="spotify-api" />
+import { SpotifyService } from "./service.js";
+export declare const limitMax = 50;
+export declare function search(query: SpotifyApi.SearchForItemParameterObject, service: SpotifyService): Promise<SpotifyApi.SearchResponse | undefined>;
+export declare function getFavoriteAlbums(service: SpotifyService, k?: number): Promise<SpotifyApi.SavedAlbumObject[] | undefined>;
+export declare function getFavoriteTracks(service: SpotifyService, k?: number): Promise<SpotifyApi.SavedTrackObject[] | undefined>;
+export declare function getTopUserArtists(service: SpotifyService, k?: number): Promise<SpotifyApi.ArtistObjectFull[] | undefined>;
+export declare function getTopUserTracks(service: SpotifyService, k?: number): Promise<SpotifyApi.TrackObjectFull[] | undefined>;
+export declare function getFollowedArtists(service: SpotifyService, k?: number): Promise<SpotifyApi.ArtistObjectFull[] | undefined>;
+export declare function getRecentlyPlayed(service: SpotifyService, k?: number): Promise<SpotifyApi.PlayHistoryObject[] | undefined>;
+export declare function getArtist(service: SpotifyService, id: string): Promise<SpotifyApi.SingleArtistResponse | undefined>;
+export declare function getArtists(service: SpotifyService, ids: string[]): Promise<SpotifyApi.MultipleArtistsResponse | undefined>;
+export declare function getArtistTopTracks(service: SpotifyService, id: string): Promise<SpotifyApi.ArtistsTopTracksResponse | undefined>;
+export declare function getHistoryURL(service: SpotifyService, url: string): Promise<SpotifyApi.UsersRecentlyPlayedTracksResponse | undefined>;
+export declare function getUserProfile(service: SpotifyService): Promise<SpotifyApi.UserProfileResponse | undefined>;
+export declare function getPlaybackState(service: SpotifyService): Promise<SpotifyApi.CurrentPlaybackResponse | undefined>;
+export declare function transferPlayback(service: SpotifyService, deviceId: string, play?: boolean): Promise<any>;
+export declare function play(service: SpotifyService, deviceId: string, uris?: string[], contextUri?: string, trackNumber?: number, seekms?: number): Promise<any>;
+export declare function getDevices(service: SpotifyService): Promise<SpotifyApi.UserDevicesResponse | undefined>;
+export declare function pause(service: SpotifyService, deviceId: string): Promise<any>;
+export declare function getQueue(service: SpotifyService): Promise<SpotifyApi.UsersQueueResponse | undefined>;
+export declare function previous(service: SpotifyService, deviceId: string): Promise<any>;
+export declare function shuffle(service: SpotifyService, deviceId: string, newShuffleState: boolean): Promise<any>;
+export declare function next(service: SpotifyService, deviceId: string): Promise<any>;
+export declare function getPlaylists(service: SpotifyService): Promise<SpotifyApi.ListOfCurrentUsersPlaylistsResponse | undefined>;
+export declare function getAlbum(service: SpotifyService, id: string): Promise<SpotifyApi.SingleAlbumResponse | undefined>;
+export declare function getAlbums(service: SpotifyService, ids: string[]): Promise<SpotifyApi.MultipleAlbumsResponse | undefined>;
+export declare function getAlbumTracks(service: SpotifyService, albumId: string): Promise<SpotifyApi.AlbumTracksResponse | undefined>;
+export declare function getTrack(service: SpotifyService, id: string): Promise<SpotifyApi.SingleTrackResponse | undefined>;
+export declare function getTracksFromIdsBatch(service: SpotifyService, trackIds: string[]): Promise<SpotifyApi.MultipleTracksResponse | undefined>;
+export declare function getTracksFromIds(service: SpotifyService, trackIds: string[]): Promise<SpotifyApi.TrackObjectFull[]>;
+export declare function getPlaylistTracks(service: SpotifyService, playlistId: string): Promise<SpotifyApi.PlaylistTrackResponse | undefined>;
+export declare function deletePlaylist(service: SpotifyService, playlistId: string): Promise<SpotifyApi.UnfollowPlaylistResponse | undefined>;
+export declare function createPlaylist(service: SpotifyService, name: string, userId: string, uris: string[], description?: string): Promise<SpotifyApi.AddTracksToPlaylistResponse | undefined>;
+export declare function setVolume(service: SpotifyService, amt?: number): Promise<any>;
+//# sourceMappingURL=endpoints.d.ts.map

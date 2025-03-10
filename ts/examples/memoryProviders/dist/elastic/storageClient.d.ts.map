@@ -1,0 +1,1 @@
+{"version":3,"file":"storageClient.d.ts","sourceRoot":"","sources":["../../src/elastic/storageClient.ts"],"names":[],"mappings":"AAQA,OAAO,EAEH,eAAe,EAElB,MAAM,qBAAqB,CAAC;AAM7B,wBAAsB,kBAAkB,CACpC,SAAS,EAAE,OAAO,GACnB,OAAO,CAAC,eAAe,CAAC,CAuE1B"}

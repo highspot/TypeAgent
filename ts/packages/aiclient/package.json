@@ -1,0 +1,50 @@
+{
+  "name": "aiclient",
+  "version": "0.0.10",
+  "description": "Clients for AI APIs used by Microsoft AI Systems team.",
+  "homepage": "https://github.com/microsoft/TypeAgent#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/TypeAgent.git",
+    "directory": "ts/packages/aiclient"
+  },
+  "license": "MIT",
+  "author": "Microsoft",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run tsc",
+    "clean": "rimraf --glob dist *.tsbuildinfo *.done.build.log",
+    "prettier": "prettier --check . --ignore-path ../../.prettierignore",
+    "prettier:fix": "prettier --write . --ignore-path ../../prettierignore",
+    "test": "npm run test:local",
+    "test:local": "node --no-warnings --experimental-vm-modules ./node_modules/jest/bin/jest.js --testPathPattern=\".*\\.spec\\.js\"",
+    "test:local:debug": "node --inspect-brk --no-warnings --experimental-vm-modules ./node_modules/jest/bin/jest.js --testPathPattern=\".*\\.spec\\.js\"",
+    "tsc": "tsc -b"
+  },
+  "dependencies": {
+    "@azure/identity": "4.2.1",
+    "async": "^3.2.5",
+    "debug": "^4.4.0",
+    "telemetry": "workspace:*",
+    "typechat": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/async": "^3.2.24",
+    "@types/debug": "^4.1.12",
+    "@types/jest": "^29.5.7",
+    "@types/node": "^18.18.7",
+    "dotenv": "^16.3.1",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

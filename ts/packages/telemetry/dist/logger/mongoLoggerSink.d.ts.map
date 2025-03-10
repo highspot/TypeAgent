@@ -1,0 +1,1 @@
+{"version":3,"file":"mongoLoggerSink.d.ts","sourceRoot":"","sources":["../../src/logger/mongoLoggerSink.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,UAAU,EAAY,MAAM,aAAa,CAAC;AAmEnD,wBAAgB,uBAAuB,CACnC,MAAM,EAAE,MAAM,EACd,cAAc,EAAE,MAAM,EACtB,SAAS,CAAC,EAAE,MAAM,OAAO,EACzB,cAAc,CAAC,EAAE,CAAC,KAAK,EAAE,MAAM,KAAK,IAAI,GACzC,UAAU,GAAG,SAAS,CAcxB"}

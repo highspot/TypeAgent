@@ -1,0 +1,1 @@
+{"version":3,"file":"typescriptChunker.d.ts","sourceRoot":"","sources":["../src/typescriptChunker.ts"],"names":[],"mappings":"AASA,OAAO,EAGH,OAAO,EACP,WAAW,EACX,gBAAgB,EACnB,MAAM,kBAAkB,CAAC;AAI1B,wBAAgB,WAAW,IAAI,OAAO,CAOrC;AAED,wBAAsB,uBAAuB,CACzC,SAAS,EAAE,MAAM,EAAE,GACpB,OAAO,CAAC,CAAC,WAAW,GAAG,gBAAgB,CAAC,EAAE,CAAC,CAoF7C;AAmID,qBAAa,OAAO;WACI,IAAI;CAW3B"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"dispatcherUtils.js","sourceRoot":"","sources":["../../../src/context/dispatcher/dispatcherUtils.ts"],"names":[],"mappings":"AAAA,uCAAuC;AACvC,kCAAkC;AAKlC,MAAM,CAAC,MAAM,cAAc,GAAG,YAAY,CAAC;AAE3C,MAAM,UAAU,eAAe,CAAC,MAAiB;IAC7C,OAAO,MAAM,CAAC,UAAU,KAAK,SAAS,CAAC;AAC3C,CAAC"}

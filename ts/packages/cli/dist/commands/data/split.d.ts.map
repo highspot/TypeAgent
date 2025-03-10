@@ -1,0 +1,1 @@
+{"version":3,"file":"split.d.ts","sourceRoot":"","sources":["../../../src/commands/data/split.ts"],"names":[],"mappings":"AAGA,OAAO,EAAQ,OAAO,EAAS,MAAM,aAAa,CAAC;AASnD,MAAM,CAAC,OAAO,OAAO,4BAA6B,SAAQ,OAAO;IAC7D,MAAM,CAAC,MAAM,UAAS;IACtB,MAAM,CAAC,IAAI;;MAIT;IACF,MAAM,CAAC,KAAK;;MAMV;IACI,GAAG,IAAI,OAAO,CAAC,IAAI,CAAC;CAwE7B"}

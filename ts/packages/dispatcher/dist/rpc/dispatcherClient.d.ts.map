@@ -1,0 +1,1 @@
+{"version":3,"file":"dispatcherClient.d.ts","sourceRoot":"","sources":["../../src/rpc/dispatcherClient.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,UAAU,EAAE,MAAM,mBAAmB,CAAC;AAG/C,OAAO,EAAE,UAAU,EAAE,MAAM,kBAAkB,CAAC;AAM9C,wBAAgB,yBAAyB,CAAC,OAAO,EAAE,UAAU,GAAG,UAAU,CA4CzE"}

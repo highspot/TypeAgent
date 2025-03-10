@@ -1,0 +1,8 @@
+packages:
+  - "packages/*"
+  - "packages/memory/*"
+  - "packages/agents/*"
+  - "packages/agents/agentUtils/*"
+  - "examples/*"
+  - "examples/agentExamples/*"
+  - "tools"

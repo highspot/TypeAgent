@@ -1,0 +1,1 @@
+{"version":3,"file":"databaseUtils.d.ts","sourceRoot":"","sources":["../src/databaseUtils.ts"],"names":[],"mappings":"AAOA,OAAiB,KAAK,MAAM,MAAM,gBAAgB,CAAC;AAEnD,OAAO,EAAE,gBAAgB,EAAE,MAAM,6BAA6B,CAAC;AAiD/D,wBAAgB,cAAc,CAAC,OAAO,EAAE,gBAAgB,GAAG,IAAI,CAwB9D;AAED,wBAAgB,SAAS,CAAC,EAAE,EAAE,MAAM,CAAC,QAAQ,EAAE,QAAQ,EAAE,MAAM,GAAG,IAAI,CAkCrE"}

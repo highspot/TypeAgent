@@ -1,0 +1,41 @@
+{
+  "paramSpec": {
+    "playRandom": {
+      "quantity": "number"
+    },
+    "playTrack": {
+      "trackName": "checked_wildcard",
+      "artists.*": "checked_wildcard"
+    },
+    "playFromCurrentTrackList": {
+      "trackNumber": "ordinal"
+    },
+    "playAlbum": {
+      "albumName": "checked_wildcard",
+      "artists.*": "checked_wildcard",
+      "trackNumber.*": "ordinal"
+    },
+    "playAlbumTrack": {
+      "albumName": "checked_wildcard",
+      "trackName": "checked_wildcard",
+      "artists.*": "checked_wildcard"
+    },
+    "playArtist": {
+      "artist": "checked_wildcard",
+      "quantity": "number"
+    },
+    "playGenre": {
+      "genre": "checked_wildcard",
+      "quantity": "number"
+    },
+    "setVolume": {
+      "newVolumeLevel": "number"
+    },
+    "changeVolume": {
+      "volumeChangePercentage": "percentage"
+    },
+    "getFavorites": {
+      "count": "number"
+    }
+  }
+}
