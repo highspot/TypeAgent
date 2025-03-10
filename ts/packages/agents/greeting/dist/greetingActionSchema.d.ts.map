@@ -1,0 +1,1 @@
+{"version":3,"file":"greetingActionSchema.d.ts","sourceRoot":"","sources":["../src/greetingActionSchema.ts"],"names":[],"mappings":"AAGA,MAAM,MAAM,cAAc,GAAG,0BAA0B,CAAC;AASxD,MAAM,WAAW,0BAA0B;IACvC,UAAU,EAAE,4BAA4B,CAAC;IACzC,UAAU,EAAE;QAER,eAAe,EAAE,MAAM,CAAC;QAExB,iBAAiB,EAAE,eAAe,EAAE,CAAC;KACxC,CAAC;CACL;AAID,MAAM,WAAW,eAAe;IAI5B,iBAAiB,EAAE,MAAM,CAAC;CAC7B"}

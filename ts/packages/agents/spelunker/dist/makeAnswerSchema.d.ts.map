@@ -1,0 +1,1 @@
+{"version":3,"file":"makeAnswerSchema.d.ts","sourceRoot":"","sources":["../src/makeAnswerSchema.ts"],"names":[],"mappings":"AAIA,MAAM,MAAM,OAAO,GAAG,MAAM,CAAC;AAG7B,MAAM,MAAM,WAAW,GAAG;IACtB,QAAQ,EAAE,MAAM,CAAC;IACjB,MAAM,EAAE,MAAM,CAAC;IAEf,UAAU,EAAE,OAAO,EAAE,CAAC;IACtB,UAAU,EAAE,MAAM,CAAC;IACnB,OAAO,CAAC,EAAE,MAAM,CAAC;CACpB,CAAC"}

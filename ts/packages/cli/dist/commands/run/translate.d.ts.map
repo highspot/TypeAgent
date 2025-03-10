@@ -1,0 +1,1 @@
+{"version":3,"file":"translate.d.ts","sourceRoot":"","sources":["../../../src/commands/run/translate.ts"],"names":[],"mappings":"AAGA,OAAO,EAAQ,OAAO,EAAS,MAAM,aAAa,CAAC;AAkBnD,MAAM,CAAC,OAAO,OAAO,gBAAiB,SAAQ,OAAO;IACjD,MAAM,CAAC,IAAI;;MAMT;IAEF,MAAM,CAAC,KAAK;;;;;;;;;;;MAgDV;IAEF,MAAM,CAAC,WAAW,SAAqC;IACvD,MAAM,CAAC,OAAO,WAEZ;IAEI,GAAG,IAAI,OAAO,CAAC,IAAI,CAAC;CA4C7B"}

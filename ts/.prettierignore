@@ -1,0 +1,26 @@
+# VSCode config
+.vscode/**
+**/.vscode-test/**
+
+# Lock file
+pnpm-lock.yaml
+
+# Build output
+**/dist/*
+**/lib/*
+**/out/*
+
+# Typescript config
+tsconfig.json
+
+# Test data
+packages/defaultAgentProvider/test/data
+packages/defaultAgentProvider/test/repo
+packages/defaultAgentProvider/data/**/*.json
+
+# Test result
+packages/shell/test-results/*
+packages/shell/playwright-report/*
+
+# Eval sources
+packages/agents/spelunker/evals/eval-*/source

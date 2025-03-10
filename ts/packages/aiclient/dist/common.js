@@ -1,0 +1,53 @@
+"use strict";
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getIntFromEnv = exports.hasEnvSettings = exports.getEnvSetting = void 0;
+/**
+ * Retrieve a setting from environment variables
+ * @param env environment variables
+ * @param key setting key
+ * @param keySuffix additional suffix to add to key
+ * @param defaultValue default value of setting
+ * @returns
+ */
+function getEnvSetting(env, key, keySuffix, defaultValue, requireSuffix = false) {
+    const envKey = keySuffix ? key + "_" + keySuffix : key;
+    let value = env[envKey] ?? defaultValue;
+    if (value === undefined && keySuffix) {
+        if (!requireSuffix) {
+            // Fallback to key without the suffix
+            value = env[key];
+        }
+    }
+    if (value === undefined) {
+        throw new Error(`Missing ApiSetting: ${key}`);
+    }
+    return value;
+}
+exports.getEnvSetting = getEnvSetting;
+/**
+ * Returns true if the given environment setting/key is available
+ * @param key
+ * @param keySuffix
+ * @returns true if available, false otherwise
+ */
+function hasEnvSettings(env, key, keySuffix) {
+    try {
+        const setting = getEnvSetting(env, key, keySuffix, undefined, true);
+        return setting !== undefined && setting.length > 0;
+    }
+    catch { }
+    return false;
+}
+exports.hasEnvSettings = hasEnvSettings;
+function getIntFromEnv(env, envName, endpointName) {
+    const numString = getEnvSetting(env, envName, endpointName, "");
+    const num = numString ? parseInt(numString) : undefined;
+    if (num !== undefined && (num.toString() !== numString || num <= 0)) {
+        throw new Error(`Invalid value for ${envName}: ${numString}`);
+    }
+    return num;
+}
+exports.getIntFromEnv = getIntFromEnv;
+//# sourceMappingURL=common.js.map

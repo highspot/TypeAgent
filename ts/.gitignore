@@ -1,0 +1,14 @@
+!bin
+.vscode-test
+.cert/
+prod/
+coverage/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+#interactive apps
+command_history.json

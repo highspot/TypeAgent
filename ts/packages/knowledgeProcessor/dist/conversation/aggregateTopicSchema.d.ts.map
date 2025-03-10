@@ -1,0 +1,1 @@
+{"version":3,"file":"aggregateTopicSchema.d.ts","sourceRoot":"","sources":["../../src/conversation/aggregateTopicSchema.ts"],"names":[],"mappings":"AAGA,MAAM,MAAM,KAAK,GAAG,MAAM,CAAC;AAE3B,MAAM,MAAM,sBAAsB,GAAG;IACjC,MAAM,EAAE,SAAS,GAAG,MAAM,CAAC;IAE3B,KAAK,EAAE,KAAK,CAAC;CAChB,CAAC"}

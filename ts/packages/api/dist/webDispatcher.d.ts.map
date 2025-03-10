@@ -1,0 +1,1 @@
+{"version":3,"file":"webDispatcher.d.ts","sourceRoot":"","sources":["../src/webDispatcher.ts"],"names":[],"mappings":"AAYA,OAAO,SAAS,MAAM,IAAI,CAAC;AAE3B,MAAM,WAAW,aAAa;IAC1B,OAAO,CAAC,EAAE,EAAE,SAAS,GAAG,IAAI,CAAC;IAC7B,KAAK,IAAI,IAAI,CAAC;CACjB;AACD,wBAAsB,mBAAmB,IAAI,OAAO,CAAC,aAAa,CAAC,CAiHlE"}

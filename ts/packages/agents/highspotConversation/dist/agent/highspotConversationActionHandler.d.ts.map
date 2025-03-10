@@ -1,0 +1,1 @@
+{"version":3,"file":"highspotConversationActionHandler.d.ts","sourceRoot":"","sources":["../../src/agent/highspotConversationActionHandler.ts"],"names":[],"mappings":"AAAA,OAAO,EAEH,QAAQ,EAIX,MAAM,sBAAsB,CAAC;AAM9B,OAAO,EAAkB,SAAS,EAAE,MAAM,qBAAqB,CAAC;AAGhE,MAAM,MAAM,qBAAqB,GAAG;IAChC,EAAE,EAAE,SAAS,GAAG,SAAS,CAAC;CAC7B,CAAC;AAQF,wBAAgB,WAAW,IAAI,QAAQ,CAKtC"}

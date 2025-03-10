@@ -1,0 +1,56 @@
+{
+  "name": "desktop-automation",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "homepage": "https://github.com/microsoft/TypeAgent#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/TypeAgent.git",
+    "directory": "ts/packages/agents/desktop"
+  },
+  "license": "MIT",
+  "author": "Microsoft",
+  "type": "module",
+  "exports": {
+    "./agent/manifest": "./src/manifest.json",
+    "./agent/handlers": "./dist/actionHandler.js"
+  },
+  "scripts": {
+    "build": "npm run tsc",
+    "clean": "rimraf --glob dist *.tsbuildinfo *.done.build.log",
+    "prettier": "prettier --check . --ignore-path ../../../.prettierignore",
+    "prettier:fix": "prettier --write . --ignore-path ../../../.prettierignore",
+    "tsc": "tsc -p src"
+  },
+  "dependencies": {
+    "@typeagent/agent-sdk": "workspace:*",
+    "agent-cache": "workspace:*",
+    "aiclient": "workspace:*",
+    "body-parser": "^1.20.3",
+    "chalk": "^5.3.0",
+    "common-utils": "workspace:*",
+    "cors": "^2.8.5",
+    "debug": "^4.4.0",
+    "dotenv": "^16.3.1",
+    "find-config": "^1.0.0",
+    "open": "^7.0.4",
+    "typeagent": "workspace:*",
+    "typechat": "^0.1.1",
+    "ws": "^8.17.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/debug": "^4.1.12",
+    "@types/express": "^4.17.17",
+    "@types/find-config": "1.0.4",
+    "@types/node": "^20.3.1",
+    "@types/ws": "^8.5.10",
+    "copyfiles": "^2.4.1",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.2"
+  }
+}

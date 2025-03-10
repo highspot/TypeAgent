@@ -1,0 +1,1 @@
+{"version":3,"file":"defaultAgentProviders.d.ts","sourceRoot":"","sources":["../src/defaultAgentProviders.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,gBAAgB,EAAE,iBAAiB,EAAE,MAAM,kBAAkB,CAAC;AAQvE,wBAAgB,0BAA0B,IAAI,gBAAgB,CAQ7D;AAoBD,wBAAgB,2BAA2B,CACvC,WAAW,EAAE,MAAM,GAAG,SAAS,GAChC,gBAAgB,EAAE,CAMpB;AAGD,wBAAgB,2BAA2B,CACvC,WAAW,EAAE,MAAM,GACpB,iBAAiB,CAmCnB"}

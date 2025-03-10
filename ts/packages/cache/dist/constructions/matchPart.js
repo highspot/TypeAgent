@@ -1,0 +1,179 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+import { escapeMatch } from "../utils/regexp.js";
+export function toTransformInfoKey(transformInfo) {
+    return `${transformInfo.namespace}::${transformInfo.actionIndex ? `${transformInfo.actionIndex}.}` : ""}${transformInfo.transformName}`;
+}
+function toTransformInfosKey(transformInfos) {
+    return transformInfos?.map(toTransformInfoKey).sort().join(",");
+}
+function getMatchSetNamespace(transformInfos) {
+    // Since the matchset needs to grow along with the available transform, we need to use the same
+    // namespace schema, which is the transform namespace determined when the construction is created.
+    // Currently the transform namespace is <translatorName> or <translatorName>.<actionName> depending on the SchemaConfig
+    // See `getNamespaceForCache` in schemaConfig.ts
+    // Flattening the pair using :: as the separator, and sort them so that it is stable for equality comparison
+    return transformInfos
+        ?.map((t) => `${t.namespace}::${t.transformName}`)
+        .sort() // sort it so that it is stable
+        .join(",");
+}
+/**
+ * MatchSet
+ *
+ * Merge policy:
+ * - If canBeMerged is false, it will never be substituted with other matchset unless it is an exact match.
+ * - If canBeMerged is true, it will be merged with other match set with the same name AND transformInfo if any
+ *
+ * See mergedUid and unmergedUid for the look up key for them
+ *
+ * Additionally, merge can be enabled/disabled via a flag when construction is added to the cache.
+ */
+export class MatchSet {
+    constructor(matches, name, // note: characters "_", ",", "|", ":" are reserved for internal use
+    canBeMerged, namespace, index = -1) {
+        this.name = name;
+        this.canBeMerged = canBeMerged;
+        this.namespace = namespace;
+        this.index = index;
+        // Case insensitive match
+        // TODO: non-diacritic match
+        this.matches = new Set(Array.from(matches).map((m) => m.toLowerCase()));
+    }
+    get fullName() {
+        return `${this.name}${this.index !== -1 ? `_${this.index}` : ""}`;
+    }
+    get mergedUid() {
+        return `${this.name}${this.namespace ? `,${this.namespace}` : ""}`;
+    }
+    get unmergedUid() {
+        // Use the static set of match set strings to ensure only exact match will be reused
+        return `${this.mergedUid},${this.matchSetString}`;
+    }
+    get matchSetString() {
+        return Array.from(this.matches).sort().join("|");
+    }
+    get regexPart() {
+        return Array.from(this.matches)
+            .sort((a, b) => b.length - a.length) // Match longest first
+            .map((m) => escapeMatch(m))
+            .join("|");
+    }
+    get regExp() {
+        if (this._regExp === undefined) {
+            this._regExp = new RegExp(`(?:${this.regexPart})`, "iuy");
+        }
+        return this._regExp;
+    }
+    forceRegexp() {
+        const regExp = this.regExp;
+        regExp.exec("");
+        regExp.exec("");
+        regExp.exec("");
+        regExp.exec("");
+        regExp.exec("");
+    }
+    clearRegexp() {
+        this._regExp = undefined;
+    }
+    clone(canBeMerged, index) {
+        return new MatchSet(this.matches, this.name, canBeMerged, this.namespace, index);
+    }
+    toJSON() {
+        return {
+            matches: Array.from(this.matches),
+            basename: this.name,
+            namespace: this.namespace,
+            canBeMerged: this.canBeMerged,
+            index: this.index,
+        };
+    }
+}
+export class MatchPart {
+    constructor(matchSet, optional, wildcardMode, transformInfos) {
+        this.matchSet = matchSet;
+        this.optional = optional;
+        this.wildcardMode = wildcardMode;
+        this.transformInfos = transformInfos;
+    }
+    get capture() {
+        return this.transformInfos !== undefined;
+    }
+    get regExp() {
+        return this.matchSet.regExp;
+    }
+    toString(verbose = false) {
+        return (`<${verbose ? this.matchSet.fullName : this.matchSet.name}>` +
+            (this.optional ? "?" : ""));
+    }
+    toJSON() {
+        return {
+            matchSet: this.matchSet.fullName,
+            optional: this.optional ? true : undefined,
+            wildcardMode: this.wildcardMode !== 0 /* WildcardMode.Disabled */
+                ? this.wildcardMode
+                : undefined,
+            transformInfos: this.transformInfos,
+        };
+    }
+    equals(e) {
+        return (isMatchPart(e) &&
+            e.matchSet === this.matchSet &&
+            e.optional === this.optional &&
+            e.wildcardMode === this.wildcardMode &&
+            toTransformInfosKey(e.transformInfos) ===
+                toTransformInfosKey(this.transformInfos));
+    }
+}
+export function createMatchPart(matches, name, options) {
+    const canBeMerged = options?.canBeMerged ?? true;
+    const optional = options?.optional ?? false;
+    const wildcardMode = options?.wildcardMode ?? 0 /* WildcardMode.Disabled */;
+    const transformInfos = options?.transformInfos;
+    // Error checking
+    if (wildcardMode && transformInfos === undefined) {
+        throw new Error("Wildcard part must be captured");
+    }
+    if (optional && transformInfos !== undefined) {
+        throw new Error("Optional part cannot be captured");
+    }
+    if (matches.some((m) => m === "")) {
+        throw new Error("Empty match is not allowed");
+    }
+    // Add all the transform namespace and transformName to the match namespace
+    // so that matches will have corresponding entry in the transforms
+    const matchSetNamespace = getMatchSetNamespace(transformInfos);
+    const matchSet = new MatchSet(matches, name, canBeMerged, matchSetNamespace);
+    return new MatchPart(matchSet, optional, wildcardMode, transformInfos);
+}
+export function isMatchPart(part) {
+    return part.hasOwnProperty("matchSet");
+}
+export function convertMatchSetV2ToV3(matchSetsV2) {
+    const matchSets = [];
+    const matchSetToTransformInfo = new Map();
+    for (const matchSet of matchSetsV2) {
+        let namespace;
+        const oldTransformInfo = matchSet.transformInfo;
+        if (oldTransformInfo !== undefined) {
+            const transformInfo = oldTransformInfo.transformNames.map((transformName) => {
+                return {
+                    namespace: oldTransformInfo.translatorName,
+                    transformName,
+                };
+            });
+            const matchSetName = `${matchSet.basename}${matchSet.index !== -1 ? `_${matchSet.index}` : ""}`;
+            matchSetToTransformInfo.set(matchSetName, transformInfo);
+            namespace = getMatchSetNamespace(transformInfo);
+        }
+        matchSets.push({
+            matches: matchSet.matches,
+            basename: matchSet.basename,
+            namespace,
+            canBeMerged: matchSet.canBeMerged,
+            index: matchSet.index,
+        });
+    }
+    return { matchSets, matchSetToTransformInfo };
+}
+//# sourceMappingURL=matchPart.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"dispatcherAgent.d.ts","sourceRoot":"","sources":["../../src/dispatcher/dispatcherAgent.ts"],"names":[],"mappings":"AAWA,OAAO,EAAiB,SAAS,EAAE,QAAQ,EAAE,MAAM,sBAAsB,CAAC;AAG1E,OAAO,EAEH,aAAa,EAChB,MAAM,oCAAoC,CAAC;AAG5C,wBAAgB,eAAe,CAAC,MAAM,EAAE,SAAS,GAAG,MAAM,IAAI,aAAa,CAE1E;AAyCD,eAAO,MAAM,eAAe,EAAE,QAG7B,CAAC"}

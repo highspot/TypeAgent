@@ -1,0 +1,1 @@
+{"version":3,"file":"limiter.d.ts","sourceRoot":"","sources":["../src/limiter.ts"],"names":[],"mappings":"AAGA,MAAM,MAAM,OAAO,GAAG,CAAC,CAAC,GAAG,IAAI,EAAE,QAAQ,EAAE,MAAM,OAAO,CAAC,CAAC,CAAC,KAAK,OAAO,CAAC,CAAC,CAAC,CAAC;AAC3E,wBAAgB,aAAa,CAAC,KAAK,EAAE,MAAM,GAAG,OAAO,CAuBpD"}

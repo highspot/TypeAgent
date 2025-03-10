@@ -1,0 +1,1 @@
+{"version":3,"file":"oracleSchema.d.ts","sourceRoot":"","sources":["../src/oracleSchema.ts"],"names":[],"mappings":"AAGA,MAAM,MAAM,YAAY,GAAG,WAAW,CAAC;AAIvC,MAAM,MAAM,WAAW,GAAG;IACtB,UAAU,EAAE,aAAa,CAAC;IAC1B,UAAU,EAAE;QACR,KAAK,EAAE,MAAM,CAAC;KACjB,CAAC;CACL,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"promptLogger.d.ts","sourceRoot":"","sources":["../src/promptLogger.ts"],"names":[],"mappings":"AAGA,OAAO,EAEH,eAAe,EAGlB,MAAM,WAAW,CAAC;AAMnB;;GAEG;AACH,qBAAa,YAAY;IACrB,OAAO,CAAC,MAAM,CAAC,QAAQ,CAAe;IACtC,OAAO,CAAC,UAAU,CAA8B;IAEhD,OAAc,WAAW,QAAO,YAAY,CAQ1C;IAEF,eAAe,CAAC,cAAc,EAAE,GAAG;IAInC,gBAAgB,IAAI,eAAe;CAgBtC"}
